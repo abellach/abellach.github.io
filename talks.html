@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talks — Anna Bellach, PhD</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2744;
+  --slate: #4a5568;
+  --muted: #718096;
+  --accent: #b08d57;
+  --bg: #faf9f6;
+  --white: #ffffff;
+  --border: #e8e3db;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--navy); font-size: 15px; line-height: 1.7; }
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 56px;
+}
+.nav-name { font-family: var(--serif); font-size: 18px; color: var(--navy); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 12px; color: var(--slate); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+.page-header { max-width: 960px; margin: 0 auto; padding: 4rem 2rem 2rem; }
+.page-header h1 { font-family: var(--serif); font-size: 36px; font-weight: 400; }
+.page-header p { color: var(--muted); font-size: 14px; margin-top: 0.5rem; }
+
+section { max-width: 960px; margin: 0 auto; padding: 2rem 2rem; border-top: 1px solid var(--border); }
+section h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 1.5rem; }
+
+.pub-list { list-style: none; }
+.pub-item { padding: 1rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 44px 1fr; gap: 1rem; }
+.pub-year { font-size: 12px; font-weight: 500; color: var(--accent); padding-top: 3px; }
+.pub-title { font-family: var(--serif); font-size: 16px; line-height: 1.35; margin-bottom: 0.25rem; }
+.pub-authors { font-size: 12.5px; color: var(--muted); }
+.pub-badge { display: inline-block; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border: 1px solid var(--border); color: var(--muted); margin-left: 6px; vertical-align: middle; }
+
+footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: center; padding: 2rem; font-size: 12px; letter-spacing: 0.05em; margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="index.html">Anna Bellach, PhD</a>
+  <ul class="nav-links">
+    <li><a href="index.html#research">Research</a></li>
+    <li><a href="index.html#publications">Publications</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="talks.html">Talks</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Talks</h1>
+  <p>Invited seminars and contributed conference presentations</p>
+</div>
+
+<section>
+  <h2>Invited Seminars</h2>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Semiparametric regression models for recurrent and terminal events</div>
+        <div class="pub-authors">St. Jude Children's Research Hospital, Memphis &middot; August 2025</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Semiparametric regression models for recurrent and terminal events</div>
+        <div class="pub-authors">UCLA, Los Angeles (online) &middot; July 2025</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">General regression model for recurrent event data with competing terminal events</div>
+        <div class="pub-authors">German Cancer Research Center (DKFZ), Heidelberg &middot; August 2024</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2023</div>
+      <div>
+        <div class="pub-title">Semiparametric regression models for recurrent and terminal events</div>
+        <div class="pub-authors">US National Cancer Institute, Bethesda &middot; November 2023</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2021</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">Karolinska Institute, Stockholm (online) &middot; October 2021</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2021</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">University of Florida, Gainesville (online) &middot; September 2021</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2021</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">US National Heart, Lung and Blood Institute, Bethesda (online) &middot; July 2021</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2020</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">CBAR, Harvard T.H. Chan School of Public Health, Boston (online) &middot; August 2020</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2018</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">Fred Hutchinson Cancer Research Center, Seattle &middot; October 2018</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2016</div>
+      <div>
+        <div class="pub-title">General regression model for competing risks and recurrent event cancer data subject to competing terminal events</div>
+        <div class="pub-authors">US National Cancer Institute, Bethesda &middot; May 2016</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Contributed Conference Talks</h2>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-year">2022</div>
+      <div>
+        <div class="pub-title">General regression model for the marginal mean intensity of a recurrent event with competing terminal events</div>
+        <div class="pub-authors">Joint Statistical Meetings (JSM), Washington DC &middot; August 2022</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2019</div>
+      <div>
+        <div class="pub-title">General regression model for the subdistribution of a competing risk under left-truncation and right-censoring</div>
+        <div class="pub-authors">ENAR Spring Meeting, Philadelphia &middot; June 2019</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2018</div>
+      <div>
+        <div class="pub-title">General regression model for the subdistribution of a competing risk under left-truncation and right-censoring</div>
+        <div class="pub-authors">JSM, Vancouver &middot; July 2018</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2018</div>
+      <div>
+        <div class="pub-title">General regression model for the subdistribution of a competing risk under left-truncation and right-censoring</div>
+        <div class="pub-authors">ISNPS, Salerno &middot; June 2018</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2017</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">ENAR Spring Meeting, Washington D.C. &middot; March 2017</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2015</div>
+      <div>
+        <div class="pub-title">Competing risks regression models based on pseudo risk sets</div>
+        <div class="pub-authors">MEDIASRES Final Meeting, University of Freiburg, Germany &middot; October 2015</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2015</div>
+      <div>
+        <div class="pub-title">Extending Fine and Gray's model: A New Approach to Competing Risks Analysis</div>
+        <div class="pub-authors">ENAR Spring Meeting, Miami &middot; March 2015</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2014</div>
+      <div>
+        <div class="pub-title">Extending Fine and Gray's model: A New Approach to Competing Risks Analysis</div>
+        <div class="pub-authors">JSM, Boston &middot; August 2014</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<footer>
+  Anna Bellach, PhD &nbsp;&middot;&nbsp; Biostatistician &nbsp;&middot;&nbsp; abellach3@gmail.com
+</footer>
+
+</body>
+</html>
