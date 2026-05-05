@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Bellach, PhD — Biostatistician</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2744;
+  --slate: #4a5568;
+  --muted: #718096;
+  --accent: #b08d57;
+  --bg: #faf9f6;
+  --white: #ffffff;
+  --border: #e8e3db;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--navy); font-size: 15px; line-height: 1.7; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 56px;
+}
+.nav-name { font-family: var(--serif); font-size: 18px; color: var(--navy); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 12px; color: var(--slate); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+
+.mode-bar {
+  background: var(--navy); color: rgba(255,255,255,0.7);
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  padding: 0.6rem 2rem; font-size: 12px; letter-spacing: 0.06em;
+}
+.mode-bar span { color: rgba(255,255,255,0.5); }
+.mode-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7); padding: 3px 14px; border-radius: 20px;
+  font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s; font-family: var(--sans);
+}
+.mode-btn:hover { border-color: rgba(255,255,255,0.6); color: white; }
+.mode-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+.hero {
+  display: grid; grid-template-columns: 1fr 260px; gap: 4rem;
+  max-width: 960px; margin: 0 auto; padding: 4.5rem 2rem 3.5rem;
+  align-items: start;
+}
+.hero-text h1 { font-family: var(--serif); font-size: 40px; font-weight: 400; line-height: 1.15; margin-bottom: 0.3rem; }
+.hero-tagline { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
+.hero-bio { color: var(--slate); font-size: 15px; line-height: 1.8; margin-bottom: 0.9rem; display: none; }
+.hero-bio.active { display: block; }
+
+.contact-row { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.5rem; }
+.contact-item { font-size: 13px; color: var(--muted); }
+.contact-item a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.contact-item a:hover { border-color: var(--accent); color: var(--accent); }
+
+.photo-box { width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+.photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+section { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; border-top: 1px solid var(--border); }
+section h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin-bottom: 2rem; }
+
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.rcard { background: var(--white); border: 1px solid var(--border); padding: 1.4rem; transition: border-color 0.2s; }
+.rcard:hover { border-color: var(--accent); }
+.rcard h3 { font-family: var(--serif); font-size: 16px; margin-bottom: 0.4rem; }
+.rcard p { font-size: 13px; color: var(--slate); line-height: 1.65; }
+
+.pub-section-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin: 2rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
+.pub-list { list-style: none; }
+.pub-item { padding: 1rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 44px 1fr; gap: 1rem; }
+.pub-year { font-size: 12px; font-weight: 500; color: var(--accent); padding-top: 3px; }
+.pub-title { font-family: var(--serif); font-size: 16px; line-height: 1.35; margin-bottom: 0.3rem; }
+.pub-authors { font-size: 12.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.pub-journal { font-size: 12.5px; color: var(--slate); font-style: italic; }
+.pub-doi { font-size: 11.5px; color: var(--accent); text-decoration: none; }
+.pub-doi:hover { text-decoration: underline; }
+.pub-badge { display: inline-block; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border: 1px solid var(--border); color: var(--muted); margin-left: 6px; vertical-align: middle; }
+.pub-badge.inpress { border-color: #c8a96e; color: #8a6830; }
+
+.exp-list { list-style: none; }
+.exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+.exp-period { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0.04em; padding-top: 3px; }
+.exp-title { font-family: var(--serif); font-size: 16px; margin-bottom: 0.2rem; }
+.exp-org { font-size: 13px; color: var(--slate); margin-bottom: 0.4rem; }
+.exp-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.service-list { list-style: none; }
+.service-list li { font-size: 13.5px; color: var(--slate); padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-style: italic; }
+.skills-block p { font-size: 13.5px; color: var(--slate); margin-bottom: 0.75rem; line-height: 1.65; }
+.skills-block strong { color: var(--navy); font-weight: 500; }
+.label-sm { font-size: 13px; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.75rem; display: block; }
+
+.mode-content-inline { display: none; }
+.mode-content-inline.active { display: inline; }
+
+footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: center; padding: 2rem; font-size: 12px; letter-spacing: 0.05em; margin-top: 4rem; }
+
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; }
+  .photo-box { display: none; }
+  .research-grid, .two-col { grid-template-columns: 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
+  nav { padding: 0 1rem; }
+  .nav-links { gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Anna Bellach, PhD</div>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="mode-bar">
+  <span>Viewing as:</span>
+  <button class="mode-btn active" onclick="setMode('academic')">Academia</button>
+  <button class="mode-btn" onclick="setMode('government')">Government</button>
+  <button class="mode-btn" onclick="setMode('industry')">Industry</button>
+</div>
+
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-tagline">Biostatistician &middot; PhD</p>
+    <h1>Anna Bellach</h1>
+
+    <p class="hero-bio active" data-mode="academic">
+      I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. Previously, I served as a Mathematical Statistician at NIH/NHLBI, where I supported a wide range of extra- and intramural clinical studies, including statistical analysis, statistical analysis plan development, protocol design, and DSMB interactions. I have extensive experience collaborating with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring.
+    </p>
+
+    <p class="hero-bio" data-mode="government">
+      I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. Previously, I served as a Mathematical Statistician at NIH/NHLBI, where I supported a wide range of extra- and intramural clinical studies, including statistical analysis, statistical analysis plan development, protocol design, and DSMB interactions. I have extensive experience collaborating with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring.
+    </p>
+
+    <p class="hero-bio" data-mode="industry">
+      I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. Previously, I served as a Mathematical Statistician at NIH/NHLBI, where I supported a wide range of extra- and intramural clinical studies, including statistical analysis, statistical analysis plan development, protocol design, and DSMB interactions. I have extensive experience collaborating with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring.
+    </p>
+
+    <div class="contact-row">
+      <div class="contact-item">&#9993; <a href="mailto:abellach3@gmail.com">abellach3@gmail.com</a></div>
+      <div class="contact-item">&#9993; <a href="mailto:abellach@unc.edu">abellach@unc.edu</a></div>
+      <div class="contact-item">&#127968; U.S. permanent resident &middot; German citizen</div>
+      <div class="contact-item">&#128279; <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank">LinkedIn</a></div>
+      <div class="contact-item">&#128279; <a href="https://scholar.google.com/citations?user=l7IrftoAAAAJ" target="_blank">Google Scholar</a></div>
+      <div class="contact-item">&#128279; <a href="https://orcid.org/0000-0002-3476-0097" target="_blank">ORCID</a></div>
+      <div class="contact-item">&#128279; <a href="https://github.com/abellach" target="_blank">github.com/abellach</a></div>
+    </div>
+  </div>
+  <div class="photo-box">
+    <img src="photo.jpg" alt="Anna Bellach" />
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<section id="research">
+  <h2>Research Interests</h2>
+  <div class="research-grid">
+    <div class="rcard">
+      <h3>Semiparametric Regression for Competing Risks</h3>
+      <p>I established semiparametric transformation models for the subdistribution in competing risks analysis, substantially extending the widely used Fine-Gray model. My methods enable flexible regression modeling under weaker assumptions using a weighted nonparametric maximum likelihood estimation framework. The methodology was further extended to left-truncated and right-censored data, with applications to a large bone marrow transplant dataset and a large HIV vaccine efficacy trial.</p>
+    </div>
+    <div class="rcard">
+      <h3>Recurrent Events with Competing Terminal Events</h3>
+      <p>General semiparametric regression models for recurrent event processes subject to competing terminal events, with application to data from a large COPD trial.</p>
+    </div>
+    <div class="rcard">
+      <h3>Personalized Risk Prediction after Stem Cell Transplantation</h3>
+      <p>Collaborated in a large multicenter cohort study to assess risks associated with hematopoietic stem cell transplantation (HSCT) as a treatment for high-risk hematologic malignancies in older subjects. The team established personalized prediction for non-relapse mortality after HSCT, resulting in the CHARM model.</p>
+    </div>
+    <div class="rcard">
+      <h3>Transfer Learning &amp; Machine Learning</h3>
+      <p>Current research interests include transfer learning approaches for clinical trials with sparse data, including applications in pediatric hematology and oncology.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2>Publications</h2>
+
+  <div class="pub-section-label">Methodological Research</div>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-year">2020</div>
+      <div>
+        <div class="pub-title">General regression model for the subdistribution of a competing risk under left-truncation and right-censoring</div>
+        <div class="pub-authors">Bellach A, Kosorok MR, Gilbert PB &amp; Fine JP</div>
+        <div class="pub-journal">Biometrika 107(4): 949&ndash;964 &nbsp;<a class="pub-doi" href="https://doi.org/10.1093/biomet/asaa034" target="_blank">DOI: 10.1093/biomet/asaa034</a></div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2019</div>
+      <div>
+        <div class="pub-title">Weighted NPMLE for the subdistribution of a competing risk</div>
+        <div class="pub-authors">Bellach A, Kosorok MR, R&uuml;schendorf L &amp; Fine JP</div>
+        <div class="pub-journal">Journal of the American Statistical Association 114: 259&ndash;270 &nbsp;<a class="pub-doi" href="https://doi.org/10.1080/01621459.2017.1401540" target="_blank">DOI: 10.1080/01621459.2017.1401540</a></div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="pub-section-label">Collaborative Research</div>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">The Composite Health Risk Assessment Model (CHARM) Predicts Risks of Toxicities, Functional and Cognitive Decline Among Survivors of Allogeneic Hematopoietic Cell Transplantation (allo-HCT): A Prospective BMT-CTN Study 1704 <span class="pub-badge inpress">In Press</span></div>
+        <div class="pub-authors">Sorror ML, Saber W, Brent RL, Geller N, Bellach A, et al.</div>
+        <div class="pub-journal">Blood Advances &nbsp;<a class="pub-doi" href="https://doi.org/10.1182/bloodadvances.2025018340" target="_blank">DOI: 10.1182/bloodadvances.2025018340</a></div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Novel Composite Health Assessment Risk Model for Older Allogeneic Transplant Recipients: BMT-CTN 1704</div>
+        <div class="pub-authors">Sorror ML, Logan B, Saber W, Geller N, Bellach A, et al.</div>
+        <div class="pub-journal">Blood Advances 9(13): 3268&ndash;3280 &nbsp;<a class="pub-doi" href="https://doi.org/10.1182/bloodadvances.2025015793" target="_blank">DOI: 10.1182/bloodadvances.2025015793</a></div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">Increased heart rate fragmentation in those with Williams-Beuren syndrome suggests non-autonomic mechanistic contributors to sudden death risk</div>
+        <div class="pub-authors">Cathey B, Bellach A, Troendle J, Smith K, Raja N, Osgood S, Kozel B &amp; Levin M</div>
+        <div class="pub-journal">AJP-Heart and Circulatory Physiology 327(2): H521&ndash;H532 &nbsp;<a class="pub-doi" href="https://doi.org/10.1152/ajpheart.00601.2023" target="_blank">DOI: 10.1152/ajpheart.00601.2023</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience &amp; Training</h2>
+  <ul class="exp-list">
+    <li class="exp-item">
+      <div class="exp-period">2025 &ndash; present</div>
+      <div>
+        <div class="exp-title">Visiting Research Scholar</div>
+        <div class="exp-org">University of North Carolina, Chapel Hill</div>
+        <div class="exp-desc">Conducting methodological research on semiparametric regression models for clustered competing risks data; developing transfer learning approaches for clinical trials with sparse data.</div>
+      </div>
+    </li>
+    <li class="exp-item">
+      <div class="exp-period">2025</div>
+      <div>
+        <div class="exp-title">Senior Researcher</div>
+        <div class="exp-org">German Cancer Research Center (DKFZ), Heidelberg</div>
+        <div class="exp-desc">Statistical consultancy and methodological leadership for translational oncology research. Protocol review and SAP development. Mentored PhD students and junior statisticians. Methodological research on genomic risk stratification for leukemia trials.</div>
+      </div>
+    </li>
+    <li class="exp-item">
+      <div class="exp-period">2021 &ndash; 2024</div>
+      <div>
+        <div class="exp-title">Mathematical Statistician / Statistical Methodologist</div>
+        <div class="exp-org">US National Heart, Lung, and Blood Institute (NHLBI / NIH), Bethesda</div>
+        <div class="exp-desc">Project Statistician for extramural and intramural Phase II&ndash;III multicenter randomized controlled trials. SAP development, protocol review, regulatory-facing documentation. DSMB activities and evidence-based trial oversight. Mentored postdoctoral fellows and junior statisticians. Completed formal leadership training at NHLBI.</div>
+      </div>
+    </li>
+    <li class="exp-item">
+      <div class="exp-period">2017 &ndash; 2021</div>
+      <div>
+        <div class="exp-title">Postdoctoral Researcher</div>
+        <div class="exp-org">Fred Hutch Cancer Center &middot; University of Washington &middot; Yale School of Public Health</div>
+        <div class="exp-desc">Methodological research on semiparametric regression models for left-truncated and right-censored competing risks data, with application to vaccine efficacy data. Additional research: efficient estimation for case-cohort design, emulated target trials, personalized biopsy schedules for prostate cancer screening, and metabolic collaborative studies. Coursework in neural networks and deep learning.</div>
+      </div>
+    </li>
+    <li class="exp-item">
+      <div class="exp-period">2012 &ndash; 2017</div>
+      <div>
+        <div class="exp-title">Predoctoral Researcher (Marie Curie Fellow, MEDIASRES)</div>
+        <div class="exp-org">University of Copenhagen &middot; Visiting Scholar, UNC Chapel Hill (2014, 2015)</div>
+      </div>
+    </li>
+  </ul>
+
+  <div style="margin-top:2rem;">
+    <div class="pub-section-label">Education</div>
+    <ul class="exp-list">
+      <li class="exp-item">
+        <div class="exp-period">2017</div>
+        <div><div class="exp-title">PhD, Biostatistics and Bioinformatics</div><div class="exp-org">University of Copenhagen, Denmark</div></div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-period">2012</div>
+        <div><div class="exp-title">MSc (Diplom), Mathematics</div><div class="exp-org">Albert Ludwig University of Freiburg, Germany</div></div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-period">2004</div>
+        <div><div class="exp-title">BSc (Vordiplom), Mathematics &amp; Economics</div><div class="exp-org">Albert Ludwig University of Freiburg, Germany</div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TALKS -->
+<section id="talks">
+  <h2>Selected Invited Talks</h2>
+  <ul class="pub-list">
+    <li class="pub-item"><div class="pub-year">2025</div><div><div class="pub-title">Semiparametric regression models for recurrent and terminal events</div><div class="pub-authors">St. Jude Children's Research Hospital, Memphis &middot; August 2025</div></div></li>
+    <li class="pub-item"><div class="pub-year">2023</div><div><div class="pub-title">Semiparametric regression models for recurrent and terminal events</div><div class="pub-authors">US National Cancer Institute, Bethesda &middot; November 2023</div></div></li>
+    <li class="pub-item"><div class="pub-year">2021</div><div><div class="pub-title">Competing risks regression models based on pseudo risk sets</div><div class="pub-authors">US National Heart, Lung and Blood Institute, Bethesda (online) &middot; July 2021</div></div></li>
+    <li class="pub-item"><div class="pub-year">2020</div><div><div class="pub-title">Competing risks regression models based on pseudo risk sets</div><div class="pub-authors">CBAR, Harvard T.H. Chan School of Public Health, Boston (online) &middot; August 2020</div></div></li>
+    <li class="pub-item"><div class="pub-year">2024</div><div><div class="pub-title">General regression model for recurrent event data with competing terminal events</div><div class="pub-authors">German Cancer Research Center (DKFZ), Heidelberg &middot; August 2024</div></div></li>
+    <li class="pub-item"><div class="pub-year">2016</div><div><div class="pub-title">General regression model for competing risks and recurrent event cancer data subject to competing terminal events</div><div class="pub-authors">US National Cancer Institute, Bethesda &middot; May 2016</div></div></li>
+  </ul>
+</section>
+
+<!-- CLINICAL TRIALS -->
+<section id="trials">
+  <h2>Clinical Trials Involvement</h2>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-year">2021&ndash;24</div>
+      <div>
+        <div class="pub-title">Novel composite health assessment risk model for older allogeneic transplant recipients: BMT-CTN 1704</div>
+        <div class="pub-authors">Blinded NIH/NHLBI Mathematical Statistician &middot; Trial design, protocol development, interim monitoring, DSMB review &middot; <a class="pub-doi" href="https://clinicaltrials.gov/study/NCT03992352" target="_blank">NCT03992352</a></div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2022&ndash;24</div>
+      <div>
+        <div class="pub-title">A Trial Comparing Unrelated Donor BMT with IST for Pediatric and Young Adult Patients with Severe Aplastic Anemia (TransIT: BMT CTN 2202)</div>
+        <div class="pub-authors">Blinded NIH/NHLBI Mathematical Statistician &middot; Design phase, statistical methodology guidance, DSMB meetings &middot; <a class="pub-doi" href="https://clinicaltrials.gov/study/NCT05600426" target="_blank">NCT05600426</a></div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2023&ndash;24</div>
+      <div>
+        <div class="pub-title">Clinical Trial of Upfront Haploidentical or Unrelated Donor BMT to Restore Normal Hematopoiesis in Aplastic Anemia (CureAA: BMT CTN 2207)</div>
+        <div class="pub-authors">Blinded NIH/NHLBI Mathematical Statistician &middot; Trial design and abstract writing &middot; <a class="pub-doi" href="https://clinicaltrials.gov/study/NCT06517641" target="_blank">NCT06517641</a></div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2023&ndash;24</div>
+      <div>
+        <div class="pub-title">A Randomized Phase 3 Trial of Remestemcel-L and Ruxolitinib for Steroid-Refractory Acute Graft-versus-Host Disease (BMT CTN 2303)</div>
+        <div class="pub-authors">Blinded NIH/NHLBI Mathematical Statistician &middot; Design phase, protocol development, DSMB meetings</div>
+      </div>
+    </li>
+    <li class="pub-item">
+      <div class="pub-year">2023&ndash;24</div>
+      <div>
+        <div class="pub-title">Early Endovascular Repair Versus Surveillance for Women with Small Abdominal Aortic Aneurysm (WARRIORS)</div>
+        <div class="pub-authors">Blinded NIH/NHLBI Mathematical Statistician &middot; Grant application, statistical methodology guidance, DSMB meetings &middot; <a class="pub-doi" href="https://clinicaltrials.gov/study/NCT06394271" target="_blank">NCT06394271</a></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- SERVICE & SKILLS -->
+<section>
+  <h2>Service &amp; Skills</h2>
+  <div class="two-col">
+    <div>
+      <span class="label-sm">Peer Review Service</span>
+      <ul class="service-list">
+        <li>Nature</li>
+        <li>Journal of the American Statistical Association</li>
+        <li>Journal of the Royal Statistical Society: Series B</li>
+        <li>Biometrics</li>
+        <li>Annals of Applied Statistics</li>
+        <li>Lifetime Data Analysis</li>
+        <li>Statistics in Medicine</li>
+        <li>Statistical Methods in Medical Research</li>
+        <li>International Journal of Biostatistics</li>
+        <li>Cell Reports Medicine</li>
+        <li>Statistics and Probability Letters &amp; others</li>
+      </ul>
+    </div>
+    <div class="skills-block">
+      <span class="label-sm">Programming &amp; Technical Skills</span>
+      <p><strong>R</strong> (advanced) &mdash; simulation studies, methodology development, clinical data analysis, publication-grade implementations.</p>
+      <p><strong>Statistical Simulation &amp; HPC</strong> &mdash; large-scale simulation studies for methodological validation.</p>
+      <p><strong>Regulatory &amp; Data Standards</strong> &mdash; GCP certified; familiar with regulatory principles for clinical trial submissions; actively developing CDISC (SDTM, ADaM) fluency.</p>
+      <p><strong>Languages:</strong> English (fluent) &middot; German (native)</p>
+
+      <span class="label-sm" style="margin-top:1.5rem;">Awards</span>
+      <p>Marie Curie PhD Fellow, MEDIASRES / European Commission (2012&ndash;2017)</p>
+      <p>Summer Institutes Scholarship, University of Washington (2018)</p>
+      <p>SPAC Course Scholarship, Fred Hutch Cancer Center (2018)</p>
+
+      <span class="label-sm" style="margin-top:1.5rem;">Professional Development</span>
+      <p>Bridge to Leadership Program, NIH/NHLBI</p>
+      <p>Introduction to Bayesian Methods for Clinical Trial Design, ENAR (2022)</p>
+      <p>Topics in Causal Inference, Harvard T.H. Chan School of Public Health</p>
+      <p>Good Clinical Practice (GCP) &amp; Human Subjects Research (HSP) &mdash; CITI Program</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="color:var(--slate);max-width:520px;margin-bottom:1.5rem;">
+    I am open to research collaborations, new positions in
+    <span class="mode-content-inline active" data-mode="academic">academia and statistical methodology</span><span class="mode-content-inline" data-mode="government">federal agencies and government research</span><span class="mode-content-inline" data-mode="industry">industry and biopharma</span>,
+    and consulting inquiries.
+  </p>
+  <p><a href="mailto:abellach3@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach3@gmail.com</a></p>
+  <p style="margin-top:0.75rem;"><a href="https://github.com/abellach" target="_blank" style="font-family:var(--serif);font-size:18px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;">github.com/abellach</a></p>
+  <p style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:1.5rem;">
+    <a href="https://github.com/abellach" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">GitHub</a>
+    <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=l7IrftoAAAAJ" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-3476-0097" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">ORCID</a>
+  </p>
+  <p style="margin-top:0.5rem;"><a href="mailto:abellach@unc.edu" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach@unc.edu</a></p>
+</section>
+
+<footer>
+  Anna Bellach, PhD &nbsp;&middot;&nbsp; Biostatistician &nbsp;&middot;&nbsp; abellach3@gmail.com
+</footer>
+
+<script>
+function setMode(mode) {
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.mode-btn[onclick="setMode(\'' + mode + '\')"]').classList.add('active');
+  document.querySelectorAll('.hero-bio').forEach(el => {
+    el.classList.toggle('active', el.dataset.mode === mode);
+  });
+  document.querySelectorAll('.mode-content-inline').forEach(el => {
+    el.classList.toggle('active', el.dataset.mode === mode);
+  });
+}
+</script>
+</body>
+</html>
