@@ -84,6 +84,7 @@ section h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margi
 .pub-doi:hover { text-decoration: underline; }
 .pub-badge { display: inline-block; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border: 1px solid var(--border); color: var(--muted); margin-left: 6px; vertical-align: middle; }
 .pub-badge.inpress { border-color: #c8a96e; color: #8a6830; }
+.pub-badge.preprint { border-color: #7a9cbf; color: #3a6080; }
 
 .exp-list { list-style: none; }
 .exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); align-items: start; }
@@ -152,8 +153,8 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </p>
 
     <div class="contact-row">
-      <div class="contact-item">&#9993; <a href="mailto:abellach3@gmail.com">abellach3@gmail.com</a></div>
       <div class="contact-item">&#9993; <a href="mailto:abellach@unc.edu">abellach@unc.edu</a></div>
+      <div class="contact-item">&#9993; <a href="mailto:abellach3@gmail.com">abellach3@gmail.com</a></div>
       <div class="contact-item">&#127968; U.S. permanent resident &middot; German citizen</div>
       <div class="contact-item">&#128279; <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank">LinkedIn</a></div>
       <div class="contact-item">&#128279; <a href="https://scholar.google.com/citations?user=l7IrftoAAAAJ" target="_blank">Google Scholar</a></div>
@@ -193,8 +194,16 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
 <section id="publications">
   <h2>Publications</h2>
 
-  <div class="pub-section-label">Methodological Research</div>
+  <div class="pub-section-label">Peer-Reviewed &amp; Submitted &mdash; Methodological Research</div>
   <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Weighted NPMLE for the Marginal Mean of Recurrent Events with a Competing Terminal Event <span class="pub-badge preprint">Preprint</span></div>
+        <div class="pub-authors">Bellach A &amp; Kosorok MR</div>
+        <div class="pub-journal">Submitted &nbsp;<a class="pub-doi" href="https://arxiv.org/abs/2605.25934" target="_blank">arXiv:2605.25934</a></div>
+      </div>
+    </li>
     <li class="pub-item">
       <div class="pub-year">2020</div>
       <div>
@@ -306,6 +315,24 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   </div>
 </section>
 
+<!-- TEACHING -->
+<section id="teaching">
+  <h2>Teaching Experience</h2>
+  <ul class="exp-list">
+    <li class="exp-item">
+      <div class="exp-period">2004 &ndash; 2009</div>
+      <div>
+        <div class="exp-title">Teaching Assistant</div>
+        <div class="exp-org">Albert Ludwig University of Freiburg, Germany</div>
+        <div class="exp-desc">
+          Courses taught: Probability Theory I&ndash;II / Mathematical Statistics; Stochastic Processes; Financial Mathematics; Higher Mathematics for Engineers.
+          Independently organized and taught summer review courses preparing students for Bachelor&rsquo;s examinations in Probability and Statistics.
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
 <!-- TALKS -->
 <section id="talks">
   <h2>Selected Invited Talks</h2>
@@ -410,7 +437,8 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <span class="mode-content-inline active" data-mode="academic">academia and statistical methodology</span><span class="mode-content-inline" data-mode="government">federal agencies and government research</span><span class="mode-content-inline" data-mode="industry">industry and biopharma</span>,
     and consulting inquiries.
   </p>
-  <p><a href="mailto:abellach3@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach3@gmail.com</a></p>
+  <p><a href="mailto:abellach@unc.edu" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach@unc.edu</a></p>
+  <p style="margin-top:0.5rem;"><a href="mailto:abellach3@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach3@gmail.com</a></p>
   <p style="margin-top:0.75rem;"><a href="https://github.com/abellach" target="_blank" style="font-family:var(--serif);font-size:18px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;">github.com/abellach</a></p>
   <p style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem;">
     <a href="cv_academic.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--white);background:var(--navy);text-decoration:none;padding:8px 18px;border-radius:2px;">Download Academic CV</a>
@@ -422,7 +450,6 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <a href="https://scholar.google.com/citations?user=l7IrftoAAAAJ" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">Google Scholar</a>
     <a href="https://orcid.org/0000-0002-3476-0097" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">ORCID</a>
   </p>
-  <p style="margin-top:0.5rem;"><a href="mailto:abellach@unc.edu" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach@unc.edu</a></p>
 </section>
 
 <footer>
@@ -443,3 +470,4 @@ function setMode(mode) {
 </script>
 </body>
 </html>
+
