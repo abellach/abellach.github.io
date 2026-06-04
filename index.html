@@ -29,20 +29,18 @@ nav {
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { font-size: 12px; color: var(--slate); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
-.mode-bar {
-  background: var(--navy); color: rgba(255,255,255,0.7);
-  display: flex; align-items: center; justify-content: center; gap: 1rem;
-  padding: 0.6rem 2rem; font-size: 12px; letter-spacing: 0.06em;
+.contact-bar {
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 0.5rem 2rem;
+  padding: 0.55rem 2rem; font-size: 12px; letter-spacing: 0.05em;
 }
-.mode-bar span { color: rgba(255,255,255,0.5); }
-.mode-btn {
-  background: transparent; border: 1px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.7); padding: 3px 14px; border-radius: 20px;
-  font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
-  cursor: pointer; transition: all 0.2s; font-family: var(--sans);
+.contact-bar a {
+  color: rgba(255,255,255,0.7); text-decoration: none;
+  transition: color 0.2s;
 }
-.mode-btn:hover { border-color: rgba(255,255,255,0.6); color: white; }
-.mode-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+.contact-bar a:hover { color: #ffffff; }
+.contact-bar .sep { color: rgba(255,255,255,0.2); }
 .hero {
   display: grid; grid-template-columns: 1fr 260px; gap: 4rem;
   max-width: 960px; margin: 0 auto; padding: 4.5rem 2rem 3.5rem;
@@ -50,8 +48,7 @@ nav {
 }
 .hero-text h1 { font-family: var(--serif); font-size: 40px; font-weight: 400; line-height: 1.15; margin-bottom: 0.3rem; }
 .hero-tagline { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
-.hero-bio { color: var(--slate); font-size: 15px; line-height: 1.8; margin-bottom: 0.9rem; display: none; }
-.hero-bio.active { display: block; }
+.hero-bio { color: var(--slate); font-size: 15px; line-height: 1.8; margin-bottom: 0.9rem; }
 .contact-row { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.5rem; }
 .contact-item { font-size: 13px; color: var(--muted); }
 .contact-item a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
@@ -89,8 +86,6 @@ section h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margi
 .skills-block p { font-size: 13.5px; color: var(--slate); margin-bottom: 0.75rem; line-height: 1.65; }
 .skills-block strong { color: var(--navy); font-weight: 500; }
 .label-sm { font-size: 13px; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.75rem; display: block; }
-.mode-content-inline { display: none; }
-.mode-content-inline.active { display: inline; }
 footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: center; padding: 2rem; font-size: 12px; letter-spacing: 0.05em; margin-top: 4rem; }
 @media (max-width: 680px) {
   .hero { grid-template-columns: 1fr; }
@@ -99,6 +94,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
   nav { padding: 0 1rem; }
   .nav-links { gap: 1rem; }
+  .contact-bar { justify-content: flex-start; gap: 0.4rem 1.2rem; font-size: 11px; }
 }
 </style>
 </head>
@@ -113,24 +109,28 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-<div class="mode-bar">
-  <span>Viewing as:</span>
-  <button class="mode-btn active" onclick="setMode('academic')">Academia</button>
-  <button class="mode-btn" onclick="setMode('industry')">Industry &amp; Government</button>
+
+<div class="contact-bar">
+  <a href="mailto:abellach.biostat@gmail.com">&#9993;&nbsp;abellach.biostat@gmail.com</a>
+  <span class="sep">|</span>
+  <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank">LinkedIn</a>
+  <span class="sep">|</span>
+  <a href="https://github.com/abellach" target="_blank">GitHub</a>
+  <span class="sep">|</span>
+  <a href="https://orcid.org/0000-0002-3476-0097" target="_blank">ORCID</a>
+  <span class="sep">|</span>
+  <a href="https://scholar.google.com/citations?user=l7IrftoAAAAJ" target="_blank">Google Scholar</a>
 </div>
+
 <div class="hero">
   <div class="hero-text">
     <p class="hero-tagline">Biostatistician &middot; PhD</p>
     <h1>Anna Bellach</h1>
-    <p class="hero-bio active" data-mode="academic">
-      I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. Previously, I served as a Mathematical Statistician at NIH/NHLBI, where I supported a wide range of extra- and intramural clinical studies, including statistical analysis, statistical analysis plan development, protocol design, and DSMB interactions. I have extensive experience collaborating with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring.
-    </p>
-    <p class="hero-bio" data-mode="industry">
+    <p class="hero-bio">
       I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. Previously, I served as a Mathematical Statistician at NIH/NHLBI, where I supported a wide range of extra- and intramural clinical studies, including statistical analysis, statistical analysis plan development, protocol design, and DSMB interactions. I have extensive experience collaborating with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring.
     </p>
     <div class="contact-row">
-      <div class="contact-item">&#9993; <a href="mailto:abellach@unc.edu">abellach@unc.edu</a></div>
-      <div class="contact-item">&#9993; <a href="mailto:abellach3@gmail.com">abellach3@gmail.com</a></div>
+      <div class="contact-item">&#9993; <a href="mailto:abellach.biostat@gmail.com">abellach.biostat@gmail.com</a></div>
       <div class="contact-item">&#127968; U.S. permanent resident &middot; German citizen</div>
       <div class="contact-item">&#128279; <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank">LinkedIn</a></div>
       <div class="contact-item">&#128279; <a href="https://scholar.google.com/citations?user=l7IrftoAAAAJ" target="_blank">Google Scholar</a></div>
@@ -142,6 +142,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <img src="photo.jpg" alt="Anna Bellach" />
   </div>
 </div>
+
 <section id="research">
   <h2>Research Interests</h2>
   <div class="research-grid">
@@ -163,6 +164,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </div>
   </div>
 </section>
+
 <section id="publications">
   <h2>Publications</h2>
   <div class="pub-section-label">Peer-Reviewed &amp; Submitted &mdash; Methodological Research</div>
@@ -195,11 +197,11 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   <div class="pub-section-label">Collaborative Research</div>
   <ul class="pub-list">
     <li class="pub-item">
-      <div class="pub-year">2024</div>
+      <div class="pub-year">2026</div>
       <div>
-        <div class="pub-title">The Composite Health Risk Assessment Model (CHARM) Predicts Risks of Toxicities, Functional and Cognitive Decline Among Survivors of Allogeneic Hematopoietic Cell Transplantation (allo-HCT): A Prospective BMT-CTN Study 1704 <span class="pub-badge inpress">In Press</span></div>
+        <div class="pub-title">CHARM is Prognostic of Geriatric Morbidity and Toxicity after Allogeneic Transplant for Older Adults: BMT CTN 1704 Study</div>
         <div class="pub-authors">Sorror ML, Saber W, Brent RL, Geller N, Bellach A, et al.</div>
-        <div class="pub-journal">Blood Advances &nbsp;<a class="pub-doi" href="https://doi.org/10.1182/bloodadvances.2025018340" target="_blank">DOI: 10.1182/bloodadvances.2025018340</a></div>
+        <div class="pub-journal">Blood Advances 10(5): 1657&ndash;1669 &nbsp;<a class="pub-doi" href="https://doi.org/10.1182/bloodadvances.2025018340" target="_blank">DOI: 10.1182/bloodadvances.2025018340</a></div>
       </div>
     </li>
     <li class="pub-item">
@@ -220,6 +222,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </li>
   </ul>
 </section>
+
 <section id="experience">
   <h2>Experience &amp; Training</h2>
   <ul class="exp-list">
@@ -281,6 +284,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </ul>
   </div>
 </section>
+
 <section id="teaching">
   <h2>Teaching Experience</h2>
   <ul class="exp-list">
@@ -294,6 +298,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </li>
   </ul>
 </section>
+
 <section id="talks">
   <h2>Selected Invited Talks</h2>
   <ul class="pub-list">
@@ -305,6 +310,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   </ul>
   <p style="margin-top:1.5rem;"><a href="talks.html" style="font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;">View full list of talks &rarr;</a></p>
 </section>
+
 <section id="trials">
   <h2>Clinical Trials Involvement</h2>
   <ul class="pub-list">
@@ -345,6 +351,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </li>
   </ul>
 </section>
+
 <section>
   <h2>Service &amp; Skills</h2>
   <div class="two-col">
@@ -382,19 +389,17 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </div>
   </div>
 </section>
+
 <section id="contact">
   <h2>Contact</h2>
   <p style="color:var(--slate);max-width:520px;margin-bottom:1.5rem;">
-    I am open to research collaborations, new positions in
-    <span class="mode-content-inline active" data-mode="academic">academia and statistical methodology</span><span class="mode-content-inline" data-mode="industry">industry, biopharma, and government research</span>,
-    and consulting inquiries.
+    I am open to research collaborations, new positions in academia, industry, biopharma, and government research, and consulting inquiries.
   </p>
-  <p><a href="mailto:abellach@unc.edu" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach@unc.edu</a></p>
-  <p style="margin-top:0.5rem;"><a href="mailto:abellach3@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach3@gmail.com</a></p>
+  <p><a href="mailto:abellach.biostat@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach.biostat@gmail.com</a></p>
   <p style="margin-top:0.75rem;"><a href="https://github.com/abellach" target="_blank" style="font-family:var(--serif);font-size:18px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;">github.com/abellach</a></p>
   <p style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem;">
-    <a href="cv_academic.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--white);background:var(--navy);text-decoration:none;padding:8px 18px;border-radius:2px;">Download Academic CV</a>
-    <a href="cv_industry.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--navy);background:transparent;text-decoration:none;padding:8px 18px;border-radius:2px;border:1px solid var(--navy);">Download Industry / Government CV</a>
+    <a href="abellach_acacv_3June2026.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--white);background:var(--navy);text-decoration:none;padding:8px 18px;border-radius:2px;">Download Academic CV</a>
+    <a href="anna_bellach_cv_june2026.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--navy);background:transparent;text-decoration:none;padding:8px 18px;border-radius:2px;border:1px solid var(--navy);">Download Industry / Government CV</a>
   </p>
   <p style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:1.5rem;">
     <a href="https://github.com/abellach" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">GitHub</a>
@@ -403,20 +408,11 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <a href="https://orcid.org/0000-0002-3476-0097" target="_blank" style="font-size:14px;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;">ORCID</a>
   </p>
 </section>
+
 <footer>
-  Anna Bellach, PhD &nbsp;&middot;&nbsp; Biostatistician &nbsp;&middot;&nbsp; abellach3@gmail.com
+  Anna Bellach, PhD &nbsp;&middot;&nbsp; Biostatistician &nbsp;&middot;&nbsp; abellach.biostat@gmail.com
 </footer>
-<script>
-function setMode(mode) {
-  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-  document.querySelector('.mode-btn[onclick="setMode(\'' + mode + '\')"]').classList.add('active');
-  document.querySelectorAll('.hero-bio').forEach(el => {
-    el.classList.toggle('active', el.dataset.mode === mode);
-  });
-  document.querySelectorAll('.mode-content-inline').forEach(el => {
-    el.classList.toggle('active', el.dataset.mode === mode);
-  });
-}
-</script>
 </body>
 </html>
+
+
