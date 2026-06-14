@@ -35,10 +35,7 @@ nav {
   flex-wrap: wrap; gap: 0.5rem 2rem;
   padding: 0.55rem 2rem; font-size: 12px; letter-spacing: 0.05em;
 }
-.contact-bar a {
-  color: rgba(255,255,255,0.7); text-decoration: none;
-  transition: color 0.2s;
-}
+.contact-bar a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .contact-bar a:hover { color: #ffffff; }
 .contact-bar .sep { color: rgba(255,255,255,0.2); }
 .hero {
@@ -127,7 +124,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <p class="hero-tagline">Biostatistician &middot; PhD</p>
     <h1>Anna Bellach</h1>
     <p class="hero-bio">
-      I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. Previously, I served as a Mathematical Statistician at NIH/NHLBI, where I supported a wide range of extra- and intramural clinical studies, including statistical analysis, statistical analysis plan development, protocol design, and DSMB interactions. I have extensive experience collaborating with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring.
+      I am a Biostatistician and Visiting Research Scholar at the University of North Carolina at Chapel Hill, with expertise in survival analysis, competing risks, complex and composite endpoints, clinical trial design, and advanced statistical methodology, including semiparametric modeling and machine learning. My methodological research on weighted nonparametric maximum likelihood estimation for the subdistribution of a competing risk has been published in the Journal of the American Statistical Association and Biometrika. In my previous role as a Mathematical Statistician at the U.S. National Heart, Lung, and Blood Institute (NHLBI), I contributed to intra- and extramural collaborative research projects spanning a variety of disease areas, providing statistical consulting and methodological guidance, attending DSMB meetings for multicenter trials within the BMT CTN network, and co-mentoring medical students and fellows. I collaborated with multidisciplinary teams in oncology, hematology, and cardiovascular research, with publications in leading statistical journals and a passion for teaching and mentoring. I also completed the NHLBI Bridge to Leadership program.
     </p>
     <div class="contact-row">
       <div class="contact-item">&#128279; <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank">LinkedIn</a></div>
@@ -147,16 +144,41 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   <h2>Research Interests</h2>
   <div class="research-grid">
     <div class="rcard">
-      <h3>Semiparametric Regression for Competing Risks</h3>
-      <p>We developed semiparametric transformation models for the subdistribution of a competing risk, extending the widely used Fine-Gray model to allow flexible regression under weaker assumptions. The framework uses a weighted nonparametric maximum likelihood approach and accommodates time-dependent covariate effects. The estimators are shown to be consistent and asymptotically normal, with robust variance estimation. Performance was validated in simulation studies and illustrated through application to a large bone marrow transplant dataset.</p>
+      <h3>Weighted NPMLE for the Subdistribution of a Competing Risk</h3>
+      <p>We developed a weighted nonparametric maximum likelihood estimator for the subdistribution of a competing risk, 
+        extending the Fine&ndash;Gray model to a broad class of semiparametric transformation models under right-censoring.
+        The framework accommodates time-dependent covariate effects, and the estimators are shown to be consistent 
+        and asymptotically normal with robust sandwich variance estimation. The methodology was applied to a 
+        large bone marrow transplant dataset to assess relapse and mortality risks under different donor types and 
+        to derive personalized cumulative incidence predictions.</p>
+      <p style="margin-top:0.6rem;"><a href="https://doi.org/10.1080/01621459.2017.1401540" target="_blank" class="pub-doi">DOI: 10.1080/01621459.2017.1401540</a></p>
     </div>
     <div class="rcard">
-      <h3>Recurrent Events with Competing Terminal Events</h3>
-      <p>We developed semiparametric regression models targeting the marginal mean of a recurrent event process subject to a competing terminal event. The approach is based on a novel weighted likelihood function and accommodates a large class of regression models, including time-dependent covariate effects. The estimators are shown to be consistent and asymptotically normal, with a sandwich variance estimator. A novel simulation procedure directly targeting the marginal mean intensity is also proposed. The methodology is illustrated through application to data from a large COPD trial.</p>
+      <h3>Conditional Weighted NPMLE for the Subdistribution of a Competing Risk under Left-Truncation and Right-Censoring</h3>
+      <p>We extended the competing risks regression framework to settings with left-truncation and right-censoring.  To enable direct regression modeling
+of the cumulative incidence, I adapted the structure of a cure model and proposed a novel
+weighted-conditional likelihood function. I explored different weights and demonstrated their
+equivalence in settings without ties. A sandwich variance estimator is proposed that correctly accounts for the extra variability 
+        from the estimated weights. The methodology was applied to data from the HVTN 503 preventive HIV vaccine efficacy trial in South Africa, where competing risks arise due to infection with different HIV-1 types, and left-truncation arises because only individuals who are 18 years or older and HIV-negative are eligible for enrollment. Our findings suggest that women in South Africa tend to be infected at earlier ages than men.</p>
+      <p style="margin-top:0.6rem;"><a href="https://doi.org/10.1093/biomet/asaa034" target="_blank" class="pub-doi">DOI: 10.1093/biomet/asaa034</a></p>
+    </div>
+    <div class="rcard">
+      <h3>Weighted NPMLE for the Marginal Mean Intensity of Recurrent Events</h3>
+      <p>We developed semiparametric regression models targeting the marginal mean of a recurrent event process subject to a competing terminal event. The approach is based on a novel weighted likelihood function and accommodates a large class of transformation models, including time-dependent covariate effects. The estimators are shown to be consistent and asymptotically normal, with a sandwich variance estimator. A novel simulation procedure directly targeting the marginal mean intensity is also proposed. The methodology is illustrated through application to data from the STATCOPE COPD trial.</p>
+      <p style="margin-top:0.6rem;"><a href="https://arxiv.org/abs/2605.25934" target="_blank" class="pub-doi">arXiv:2605.25934</a></p>
     </div>
     <div class="rcard">
       <h3>Personalized Risk Prediction after Stem Cell Transplantation</h3>
-      <p>Collaborated in a large multicenter cohort study to assess risks associated with hematopoietic stem cell transplantation (HSCT) as a treatment for high-risk hematologic malignancies in older subjects. The team established personalized prediction for non-relapse mortality after HSCT, resulting in the CHARM model.</p>
+      <p>As a Mathematical Statistician at the NHLBI, I collaborated on a large multicenter cohort study within the Blood &amp; Marrow Transplant Clinical Trials Network (BMT CTN 1704), investigating risks associated with allogeneic stem cell transplantation for high-risk hematologic malignancies in recipients aged 60 and older. Older adults are often excluded from transplantation despite their high disease burden, with individual fitness, comorbidities, and drug interactions underscoring the need for personalized risk assessment. Our team developed the CHARM model for personalized prediction of non-relapse mortality using multivariate competing risks regression and machine learning approaches including pseudovalue boosting, published in Blood Advances.</p>
+      <p style="margin-top:0.6rem;">
+        <a href="https://doi.org/10.1182/bloodadvances.2025015793" target="_blank" class="pub-doi">DOI: 10.1182/bloodadvances.2025015793</a><br>
+        <a href="https://doi.org/10.1182/bloodadvances.2025018340" target="_blank" class="pub-doi">DOI: 10.1182/bloodadvances.2025018340</a>
+      </p>
+    </div>
+    <div class="rcard">
+      <h3>R Package <em>wnpmle</em></h3>
+      <p>The R package <em>wnpmle</em> implements weighted nonparametric maximum likelihood estimation for the marginal mean intensity of recurrent events with a competing terminal event. The package has been submitted to CRAN and we are planning to extend it to competing risks data.</p>
+      <p style="margin-top:0.6rem;"><a href="https://github.com/abellach/wnpmle" target="_blank" class="pub-doi">github.com/abellach/wnpmle</a></p>
     </div>
     <div class="rcard">
       <h3>Transfer Learning &amp; Machine Learning</h3>
@@ -396,7 +418,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
  Please contact me for new research collaborations, consulting, and other opportunities.
   </p>
   <p><a href="mailto:abellach.biostat@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach.biostat@gmail.com</a></p>
-    <p style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem;">
+  <p style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem;">
     <a href="cv_academia.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--white);background:var(--navy);text-decoration:none;padding:8px 18px;border-radius:2px;">Download Academic CV</a>
     <a href="cv_industry.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--navy);background:transparent;text-decoration:none;padding:8px 18px;border-radius:2px;border:1px solid var(--navy);">Download Industry / Government CV</a>
   </p>
@@ -413,5 +435,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
 </footer>
 </body>
 </html>
+
+
 
 
