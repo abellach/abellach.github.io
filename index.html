@@ -62,6 +62,7 @@ section h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margi
 .pub-section-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin: 2rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
 .pub-list { list-style: none; }
 .pub-item { padding: 1rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 44px 1fr; gap: 1rem; }
+.pub-item:last-child { border-bottom: none; }
 .pub-year { font-size: 12px; font-weight: 500; color: var(--accent); padding-top: 3px; }
 .pub-title { font-family: var(--serif); font-size: 16px; line-height: 1.35; margin-bottom: 0.3rem; }
 .pub-authors { font-size: 12.5px; color: var(--muted); margin-bottom: 0.15rem; }
@@ -73,6 +74,7 @@ section h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margi
 .pub-badge.preprint { border-color: #7a9cbf; color: #3a6080; }
 .exp-list { list-style: none; }
 .exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+.exp-item:last-child { border-bottom: none; }
 .exp-period { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0.04em; padding-top: 3px; }
 .exp-title { font-family: var(--serif); font-size: 16px; margin-bottom: 0.2rem; }
 .exp-org { font-size: 13px; color: var(--slate); margin-bottom: 0.4rem; }
@@ -80,6 +82,7 @@ section h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margi
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .service-list { list-style: none; }
 .service-list li { font-size: 13.5px; color: var(--slate); padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-style: italic; }
+.service-list li:last-child { border-bottom: none; }
 .skills-block p { font-size: 13.5px; color: var(--slate); margin-bottom: 0.75rem; line-height: 1.65; }
 .skills-block strong { color: var(--navy); font-weight: 500; }
 .label-sm { font-size: 13px; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.75rem; display: block; }
@@ -124,10 +127,9 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     <p class="hero-tagline">Biostatistician &middot; PhD</p>
     <h1>Anna Bellach</h1>
     <p class="hero-bio">
-     
-      I am a biostatistician and Visiting Research Scholar at UNC Chapel Hill, 
-      with interests in survival analysis, competing risks, 
-      recurrent event data, machine learning, and clinical trial design. 
+      I am a biostatistician and Visiting Research Scholar at UNC Chapel Hill,
+      with interests in survival analysis, competing risks,
+      recurrent event data, machine learning, and clinical trial design.
     </p>
     <div class="contact-row">
       <div class="contact-item">&#128279; <a href="https://www.linkedin.com/in/anna-bellach-8554a1134" target="_blank">LinkedIn</a></div>
@@ -135,7 +137,7 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
       <div class="contact-item">&#128279; <a href="https://orcid.org/0000-0002-3476-0097" target="_blank">ORCID</a></div>
       <div class="contact-item">&#128279; <a href="https://github.com/abellach" target="_blank">github.com/abellach</a></div>
       <div class="contact-item">&#9993; <a href="mailto:abellach.biostat@gmail.com">abellach.biostat@gmail.com</a></div>
-      <div class="contact-item">&#127968; U.S. permanent resident </div>
+      <div class="contact-item">&#127968; U.S. permanent resident</div>
     </div>
   </div>
   <div class="photo-box">
@@ -148,21 +150,21 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   <div class="research-grid">
     <div class="rcard">
       <h3>Weighted Nonparametric Maximum Likelihood Estimation for the Subdistribution of a Competing Risk</h3>
-      <p>We developed a weighted nonparametric maximum likelihood estimator for the subdistribution of a competing risk, 
+      <p>We developed a weighted nonparametric maximum likelihood estimator for the subdistribution of a competing risk,
         extending the Fine--Gray model to a broad class of semiparametric transformation models under right-censoring.
-        The framework accommodates time-dependent covariate effects, and the estimators are shown to be consistent 
-        and asymptotically normal with robust sandwich variance estimation. The methodology was applied to a 
-        large bone marrow transplant dataset to assess relapse and mortality risks under different donor types and 
+        The framework accommodates time-dependent covariate effects, and the estimators are shown to be consistent
+        and asymptotically normal with robust sandwich variance estimation. The methodology was applied to a
+        large bone marrow transplant dataset to assess relapse and mortality risks under different donor types and
         to derive personalized cumulative incidence predictions.</p>
       <p style="margin-top:0.6rem;"><a href="https://doi.org/10.1080/01621459.2017.1401540" target="_blank" class="pub-doi">DOI: 10.1080/01621459.2017.1401540</a></p>
     </div>
     <div class="rcard">
       <h3>Conditional Weighted NPMLE for the Subdistribution of a Competing Risk under Left-Truncation and Right-Censoring</h3>
-      <p>We extended the competing risks regression framework to settings with left-truncation and right-censoring.  
-        To enable direct regression modeling of the cumulative incidence, we adapted the structure of a cure model 
-        and proposed a novel weighted-conditional likelihood function. 
-        The methodology was applied to data from the HVTN 503 preventive HIV vaccine efficacy trial in South Africa, 
-        where competing risks arise due to infection with different HIV-1 types, 
+      <p>We extended the competing risks regression framework to settings with left-truncation and right-censoring.
+        To enable direct regression modeling of the cumulative incidence, we adapted the structure of a cure model
+        and proposed a novel weighted-conditional likelihood function.
+        The methodology was applied to data from the HVTN 503 preventive HIV vaccine efficacy trial in South Africa,
+        where competing risks arise due to infection with different HIV-1 types,
         and only individuals who are 18 years or older and HIV-negative are eligible for enrollment. Our findings suggest that women in South Africa tend to be infected at earlier ages than men.</p>
       <p style="margin-top:0.6rem;"><a href="https://doi.org/10.1093/biomet/asaa034" target="_blank" class="pub-doi">DOI: 10.1093/biomet/asaa034</a></p>
     </div>
@@ -173,11 +175,11 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </div>
     <div class="rcard">
       <h3>Personalized Risk Prediction after Stem Cell Transplantation</h3>
-      <p>As a Mathematical Statistician at the NHLBI, I collaborated on a large multicenter cohort study within the 
-        Blood &amp; Marrow Transplant Clinical Trials Network (BMT CTN 1704), investigating risks associated 
-        with allogeneic stem cell transplantation for high-risk hematologic malignancies in recipients aged 60 and older. 
-        Older adults are often excluded from transplantation despite their high disease burden, with individual fitness, 
-        comorbidities, and drug interactions. 
+      <p>As a Mathematical Statistician at the NHLBI, I collaborated on a large multicenter cohort study within the
+        Blood &amp; Marrow Transplant Clinical Trials Network (BMT CTN 1704), investigating risks associated
+        with allogeneic stem cell transplantation for high-risk hematologic malignancies in recipients aged 60 and older.
+        Older adults are often excluded from transplantation despite their high disease burden, with individual fitness,
+        comorbidities, and drug interactions.
         The team developed the CHARM model for personalized prediction of non-relapse mortality using
         multivariate competing risks regression and machine learning approaches including pseudovalue boosting.</p>
       <p style="margin-top:0.6rem;">
@@ -187,17 +189,14 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
     </div>
     <div class="rcard">
       <h3>R Package <em>wnpmle</em></h3>
-      <p>The R package <em>wnpmle</em> implements weighted nonparametric maximum likelihood estimation for the 
-        marginal mean intensity of recurrent events with a competing terminal event. 
+      <p>The R package <em>wnpmle</em> implements weighted nonparametric maximum likelihood estimation for the
+        marginal mean intensity of recurrent events with a competing terminal event.
       </p>
-      <p style="margin-top:0.6rem;">
-  <a href="https://CRAN.R-project.org/package=wnpmle" target="_blank" class="pub-doi">CRAN</a> | 
-  <a href="https://github.com/abellach/wnpmle" target="_blank" class="pub-doi">github.com/abellach/wnpmle</a>
-</p>
+      <p style="margin-top:0.6rem;"><a href="https://CRAN.R-project.org/package=wnpmle" target="_blank" class="pub-doi">CRAN</a> | <a href="https://github.com/abellach/wnpmle" target="_blank" class="pub-doi">github.com/abellach/wnpmle</a></p>
     </div>
     <div class="rcard">
       <h3>Transfer Learning &amp; Machine Learning</h3>
-      <p>Current research interests include transfer learning approaches for clinical trials with sparse data, 
+      <p>Current research interests include transfer learning approaches for clinical trials with sparse data,
         including applications in pediatric hematology and oncology.</p>
     </div>
   </div>
@@ -259,8 +258,9 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
       </div>
     </li>
   </ul>
-    <div style="margin-top:2rem;">
-    <div class="pub-section-label">Experience</div>
+</section>
+
+<section id="experience">
   <h2>Experience</h2>
   <ul class="exp-list">
     <li class="exp-item">
@@ -303,23 +303,31 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
       </div>
     </li>
   </ul>
-  <div style="margin-top:2rem;">
-    <div class="pub-section-label">Education</div>
-    <ul class="exp-list">
-      <li class="exp-item">
-        <div class="exp-period">2017</div>
-        <div><div class="exp-title">PhD, Biostatistics and Bioinformatics</div><div class="exp-org">University of Copenhagen, Denmark</div></div>
-      </li>
-      <li class="exp-item">
-        <div class="exp-period">2012</div>
-        <div><div class="exp-title">MSc (Diplom), Mathematics</div><div class="exp-org">Albert Ludwig University of Freiburg, Germany</div></div>
-      </li>
-      <li class="exp-item">
-        <div class="exp-period">2004</div>
-        <div><div class="exp-title">BSc (Vordiplom), Mathematics &amp; Economics</div><div class="exp-org">Albert Ludwig University of Freiburg, Germany</div></div>
-      </li>
-    </ul>
-  </div>
+
+  <div class="pub-section-label" style="margin-top:2.5rem;">Education</div>
+  <ul class="exp-list">
+    <li class="exp-item">
+      <div class="exp-period">2017</div>
+      <div>
+        <div class="exp-title">PhD, Biostatistics and Bioinformatics</div>
+        <div class="exp-org">University of Copenhagen, Denmark</div>
+      </div>
+    </li>
+    <li class="exp-item">
+      <div class="exp-period">2012</div>
+      <div>
+        <div class="exp-title">MSc (Diplom), Mathematics</div>
+        <div class="exp-org">Albert Ludwig University of Freiburg, Germany</div>
+      </div>
+    </li>
+    <li class="exp-item">
+      <div class="exp-period">2004</div>
+      <div>
+        <div class="exp-title">BSc (Vordiplom), Mathematics &amp; Economics</div>
+        <div class="exp-org">Albert Ludwig University of Freiburg, Germany</div>
+      </div>
+    </li>
+  </ul>
 </section>
 
 <section id="teaching">
@@ -348,8 +356,8 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
   <p style="margin-top:1.5rem;"><a href="talks.html" style="font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;">View full list of talks &rarr;</a></p>
 </section>
 
-<section>
-   <div class="two-col">
+<section id="service">
+  <div class="two-col">
     <div>
       <span class="label-sm">Peer Review Service</span>
       <ul class="service-list">
@@ -365,14 +373,12 @@ footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: cen
         <li>Cell Reports Medicine</li>
         <li>Statistics and Probability Letters &amp; others</li>
       </ul>
+    </div>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p style="color:var(--slate);max-width:520px;margin-bottom:1.5rem;">
- 
-  </p>
   <p><a href="mailto:abellach.biostat@gmail.com" style="font-family:var(--serif);font-size:20px;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">abellach.biostat@gmail.com</a></p>
   <p style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem;">
     <a href="cv_academia.pdf" download style="font-size:13px;font-family:var(--sans);color:var(--white);background:var(--navy);text-decoration:none;padding:8px 18px;border-radius:2px;">Download Academic CV</a>
